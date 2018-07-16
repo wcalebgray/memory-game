@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Card from './Card';
 import _ from 'lodash';
 import Radium, {StyleRoot} from 'radium';
-import { bounce, headShake, flash } from 'react-animations';
+import { headShake, pulse, flash } from 'react-animations';
 import shuffle from 'shuffle-array';
 import './App.css';
 
@@ -113,17 +113,17 @@ class App extends Component {
         animation: 'x 1s',
         animationName: Radium.keyframes(headShake, 'headShake')
       },
-      bounce: {
+      pulse: {
         animation: 'x 1s',
-        animationName: Radium.keyframes(bounce, 'bounce')
+        animationName: Radium.keyframes(pulse, 'pulse')
       }
     }
-    
+
     return this.state.cards.map((card, index)=>{
-      const isMatched = card.isMatched ? styles.bounce : null;
-      const isFlippedAndNotMatched = card.isNotAMatch ? styles.headShake : null;
+      const pulseIfMatched = card.isMatched ? styles.pulse : null;
+      const shakeIfFlippedAndNotMatched = card.isNotAMatch ? styles.headShake : null;
        return(
-        <div key={index} style={[isMatched, isFlippedAndNotMatched]}>
+        <div key={index} style={[pulseIfMatched, shakeIfFlippedAndNotMatched]}>
           <Card 
             index={index}
             value={card.value}
@@ -138,16 +138,16 @@ class App extends Component {
 
   render() {
     const styles = {
-      bounce: {
+      pulse: {
         animation: 'x 1s',
-        animationName: Radium.keyframes(bounce, 'bounce')
+        animationName: Radium.keyframes(pulse, 'pulse')
       },
       flash: {
         animation: 'x 2s infinite',
         animationName: Radium.keyframes(flash, 'flash')
       }
     }
-    const bounceIfGameOver = this.state.gameOver ? styles.bounce : null;
+    const pulseIfGameOver = this.state.gameOver ? styles.pulse : null;
     const flashIfGameOver = this.state.gameOver ? styles.flash : null;
 
     return(
@@ -156,7 +156,7 @@ class App extends Component {
           <header className="App-header">
             <h1 className="App-title">Test Your Memory!</h1>
           </header>
-          <div className="row container" style={bounceIfGameOver}>
+          <div className="row container" style={pulseIfGameOver}>
             {this.renderCards()}
           </div>
           <button className="App-reset" style={flashIfGameOver} onClick={this.reset}>{this.state.buttonText}</button>
