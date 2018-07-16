@@ -1,0 +1,61 @@
+.Flipcard {
+  height: 60px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.Flipcard-flipper {
+  height: 100%;
+}
+
+.Flipcard-front,
+.Flipcard-back {
+  height: 100%;
+  width: 100%;
+  background-color:#222222;
+  color: #ffffff;
+}
+
+.Flipcard-back {
+  background-color: #00d8ff;
+  font-size: 24px;
+}
+
+.table-wrapper {
+  display: table;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+.table-item {
+  display: table-cell;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 30px;
+  margin: auto;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@media(min-width: 768px){
+  .Flipcard{
+    height: 120px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .Flipcard-back {
+    font-size: 36px;
+  }
+  .App-logo {
+    height: 60px;
+  }
+}

@@ -1,0 +1,47 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #222222;
+  height: 100px;
+  padding: 20px;
+  color: white;
+  font-size: 24px;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-reset {
+  width: 300px;
+  height: 80px;
+  background: #00d8ff;
+  color: #ffffff;
+  border: none;
+  text-transform: uppercase;
+  font-size: 36px;
+}
+
+.App > .container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+@media(min-width: 768px) {
+  .App-header {
+    height: 150px;
+    font-size: 48px;
+  }
+  .App-reset {
+    width: 500px;
+    height: 100px;
+    font-size: 48px;
+  }
+
+  .App > .container {
+    margin-bottom: 30px;
+  }
+}
